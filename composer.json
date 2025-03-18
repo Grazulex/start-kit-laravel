@@ -14,6 +14,8 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.15",
+        "barryvdh/laravel-ide-helper": "^3.5",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^2.0",
         "laravel/pail": "^1.2.2",
@@ -21,9 +23,11 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
+        "peckphp/peck": "^0.1.2",
         "pestphp/pest": "^3.0",
         "pestphp/pest-plugin-laravel": "^3.0",
-        "pestphp/pest-plugin-type-coverage": "^3.2"
+        "pestphp/pest-plugin-type-coverage": "^3.2",
+        "rector/rector": "^1.2"
     },
     "autoload": {
         "psr-4": {
@@ -43,7 +47,9 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -60,16 +66,31 @@
         "lint": [
             "pint"
         ],
+        "spelling": [
+            "peck"
+        ],
+        "review": [
+            "rector"
+        ],
         "test:lint": [
             "pint --test"
+        ],
+        "test:rector": [
+            "rector --dry-run"
         ],
         "test:types": [
             "phpstan analyse"
         ],
         "test:type-coverage": "pest --type-coverage --min=100",
         "test:unit": "pest --parallel --ci --coverage --min=100.0",
+        "clean": [
+            "@lint",
+            "@spelling",
+            "@review"
+        ],
         "test": [
             "@test:lint",
+            "@test:rector",
             "@test:types",
             "@test:type-coverage",
             "@test:unit"
