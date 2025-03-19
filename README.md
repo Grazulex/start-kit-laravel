@@ -7,6 +7,68 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About This Starter Kit
+
+This is a starter kit for Laravel, providing a robust foundation for your Laravel projects. It includes a variety of components to help you get started quickly.
+
+## Components
+
+The following components are included in this starter kit:
+
+### Required Packages
+- `php`: ^8.4
+- `laravel/framework`: ^11.31
+- `laravel/tinker`: ^2.10.1
+
+### Development Packages
+- `barryvdh/laravel-debugbar`: ^3.15
+- `barryvdh/laravel-ide-helper`: ^3.5
+- `fakerphp/faker`: ^1.23
+- `larastan/larastan`: ^2.0
+- `laravel/pail`: ^1.2.2
+- `laravel/pint`: ^1.13
+- `laravel/sail`: ^1.41
+- `mockery/mockery`: ^1.6
+- `nunomaduro/collision`: ^8.6
+- `peckphp/peck`: ^0.1.2
+- `pestphp/pest`: ^3.0
+- `pestphp/pest-plugin-laravel`: ^3.0
+- `pestphp/pest-plugin-type-coverage`: ^3.2
+- `rector/rector`: ^1.2
+
+## Installation
+
+To install this repository from GitHub and set it up with Composer and Artisan, follow these steps:
+
+1. Clone the repository:
+    ```sh
+    git clone git@github.com:Grazulex/start-kit-laravel.git
+    cd start-kit-laravel
+    ```
+
+2. Install Composer dependencies:
+    ```sh
+    composer install
+    ```
+
+3. Copy the example environment file and generate an application key:
+    ```sh
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+4. Create the database file:
+    ```sh
+    touch database/database.sqlite
+    ```
+
+5. Run the database migrations:
+    ```sh
+    php artisan migrate
+    ```
+
+You are now ready to start developing with this Laravel starter kit.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
