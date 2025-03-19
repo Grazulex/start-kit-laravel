@@ -69,6 +69,55 @@ To install this repository from GitHub and set it up with Composer and Artisan, 
 
 You are now ready to start developing with this Laravel starter kit.
 
+## Composer Scripts
+
+The following scripts are available in the `composer.json` file:
+
+- `dev`: Starts the development server and other services.
+    ```sh
+    composer dev
+    ```
+- `lint`: Runs Pint to lint the code.
+    ```sh
+    composer lint
+    ```
+- `spelling`: Runs Peck to check for spelling errors.
+    ```sh
+    composer spelling
+    ```
+- `review`: Runs Rector to review the code.
+    ```sh
+    composer review
+    ```
+- `test:lint`: Tests the code linting.
+    ```sh
+    composer test:lint
+    ```
+- `test:rector`: Tests the code with Rector in dry-run mode.
+    ```sh
+    composer test:rector
+    ```
+- `test:types`: Runs PHPStan to analyze the code.
+    ```sh
+    composer test:types
+    ```
+- `test:type-coverage`: Runs Pest to check type coverage.
+    ```sh
+    composer test:type-coverage
+    ```
+- `test:unit`: Runs unit tests with Pest.
+    ```sh
+    composer test:unit
+    ```
+- `clean`: Runs lint, spelling, and review scripts.
+    ```sh
+    composer clean
+    ```
+- `test`: Runs all test scripts.
+    ```sh
+    composer test
+    ```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
