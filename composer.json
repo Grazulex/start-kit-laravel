@@ -1,11 +1,12 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "grazulex/start-kit-laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
         "laravel",
-        "framework"
+        "framework",
+        "starter kit"
     ],
     "license": "MIT",
     "require": {
